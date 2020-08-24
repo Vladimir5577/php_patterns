@@ -1,7 +1,5 @@
 <?php
-	interface IBook {
-		public function getTitle();
-	}
+
 	class StrategyContext {
 		private $strategy = NULL;
 
@@ -43,16 +41,13 @@
 	}
 
 	class StrategyStars implements StrategyInterface {
-		public function showTitle(IBook $book_in) {
+		public function showTitle($book_in) {
 			$title = $book_in->getTitle();
 			return Str_replace(' ', '*', $title);
 		}
 	}
 
-
-	
-
-	class Book implements IBook{
+	class Book {
 		private $author;
 		private $title;
 		function __construct ($title_in, $author_in) {
