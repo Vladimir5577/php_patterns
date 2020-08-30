@@ -64,7 +64,8 @@ class PatternSubject extends AbstractSubject {
   $patternGossiper->updateFavorites('abstract factory, decorator, visitor');
   $patternGossiper->updateFavorites('abstract factory, observer, decorator');
   $patternGossiper->detach($patternGossipFan);
-  $patternGossiper->updateFavorites('abstract factory, observer, paisley');
+  $patternGossiper->updateFavorites('abstr fa, o, pwer');
+  $patternGossiper->updateFavorites('bla, foo, bar');
 
 
 ?>

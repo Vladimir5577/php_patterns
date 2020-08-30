@@ -11,25 +11,61 @@
 	}
 
 	class PatternObserver extends AbstractObserver {
+/*		
 		public function __construct () {
-		
 		}
-
+ */
 		public function update (AbstractSubject $subject) {
 			echo ' / ' . $subject->getFavorites();
 		}
 	}
-
+	
 	class PatternSubject extends AbstractSubject {
-		private $favoritePatterns = NULL;
+		// private $favoritePattern = NULL;
 		private $observers = array();
 
-		function __construct () {
-		
+		function attach (AbstractObserver $observer_in) {
+			$this->observers[] = $observer_in;
 		}
 
+		function detach (AbstractObserver $observer_in) {
+			foreach ($this->observers as $key => $value) {
+				if ($value == $observer_in) {
+					unset($this->observers[$key]);
+				}
+			}
+		}
 
+		function notify () {
+			var_dump($this); exit;
+			foreach ($this->observers as $obs) {
+				$obs->update($this);		
+			}
+		}
+
+		function updateFavorites ($newFavorites) {
+			$this->favorites = $newFavorites;
+			$this->notify();
+		}
+
+		function getFavorites () {
+			return $this->favorites;
+		}
 	}
 
 
-?>
+	// here we are using the classes
+	//
+	$a = new PatternSubject();
+	$b = new PatternObserver();
+	$a->attach($b);
+	$a->updateFavorites('abstract factory, decorator, visitor');
+	$a->updateFavorites('Bla, Foo, Bar, Bob, Mike');
+	$a->detach($b);
+	$a->updateFavorites('a, b, c, as, wer');
+
+	
+
+
+	
+?>  
