@@ -7,8 +7,6 @@
 
 		public function bind ($name, callable $resolver) {
 			$this->bindings[$name] = $resolver;
-			var_dump($resolver());
-			exit;
 		}
 
 		public function make ($name) {

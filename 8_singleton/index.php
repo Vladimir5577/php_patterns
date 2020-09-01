@@ -71,24 +71,34 @@
 	
 	$bookBorrower1 = new BookBorrower();
 	$bookBorrower2 = new BookBorrower();
-
+	$bookBorrower3 = new BookBorrower();
+	
 
 	$bookBorrower1->borrowBook();
 	echo $bookBorrower1->getAuthorAndTitle();
 
-	echo ' / ';
+	echo "\n";
 
 	$bookBorrower2->borrowBook();
 	echo $bookBorrower2->getAuthorAndTitle();
+	
+	echo "\n";
 
+	$bookBorrower3->borrowBook();
+	echo $bookBorrower3->getAuthorAndTitle();
 
-	echo ' / ';
+	echo "\n";
 
 	$bookBorrower1->returnBook();
 	echo 'Borrower 1 return the Bookk';
+
+	
+	echo "\n";
+
 	$bookBorrower2->borrowBook();
 	echo $bookBorrower1->getAuthorAndTitle();
 
+	echo "\n";
 
 
 
