@@ -11,17 +11,12 @@
 	}
 
 	class PatternObserver extends AbstractObserver {
-/*		
-		public function __construct () {
-		}
- */
-		public function update (AbstractSubject $subject) {
-			echo ' / ' . $subject->getFavorites();
+		public function update ($object) {
+			echo ' / ' . $object->getFavorites();
 		}
 	}
-	
+
 	class PatternSubject extends AbstractSubject {
-		// private $favoritePattern = NULL;
 		private $observers = array();
 
 		function attach (AbstractObserver $observer_in) {
@@ -37,9 +32,8 @@
 		}
 
 		function notify () {
-			var_dump($this); exit;
-			foreach ($this->observers as $obs) {
-				$obs->update($this);		
+			foreach ($this->observers as $obs) {	
+				$obs->update($this);
 			}
 		}
 
@@ -51,7 +45,8 @@
 		function getFavorites () {
 			return $this->favorites;
 		}
-	}
+				
+	}	
 
 
 	// here we are using the classes
