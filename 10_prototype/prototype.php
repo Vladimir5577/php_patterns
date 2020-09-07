@@ -40,13 +40,13 @@
 
 	$book1 = clone $sqlProto;
 	$book1->setTitle("SQL For Cats");
-	echo "Book 1 topic: " . $book1->getTopic();
-	echo "Book 1 title: " . $book1->getTitle();
+	echo "Book 1 topic: " . $book1->getTopic() . "\n";
+	echo "Book 1 title: " . $book1->getTitle() . "\n";
 
 	$book2 = clone $phpProto;
 	$book2->setTitle("Learn PHP");
-	echo "Book 2 topic: " . $book2->getTopic();
-	echo "Book 2 title: " . $book2->getTitle();
+	echo "Book 2 topic: " . $book2->getTopic() . "\n";
+	echo "Book 2 title: " . $book2->getTitle() . "\n";
 
 
 
